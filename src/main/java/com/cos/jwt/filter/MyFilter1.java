@@ -21,7 +21,6 @@ public class MyFilter1 implements Filter{
 		
 		// 토큰 : 코스
 		if(req.getMethod().equals("POST")) {
-
 			String headerAuth = req.getHeader("Authorization");
 			System.out.println(headerAuth);
 

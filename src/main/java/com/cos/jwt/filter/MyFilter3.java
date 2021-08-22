@@ -27,13 +27,15 @@ public class MyFilter3 implements Filter{
 			String headerAuth = req.getHeader("Authorization");
 			System.out.println(headerAuth);
 
-			System.out.println("필터3");
+			System.out.println("필터333");
 			if(headerAuth.equals("KANU")) {
 				chain.doFilter(req, res);
 			}else {
 				PrintWriter out = res.getWriter();
 				out.println("인증안됨");
 			}
+		}else {
+			System.out.println("GET");
 		}
 		
 		

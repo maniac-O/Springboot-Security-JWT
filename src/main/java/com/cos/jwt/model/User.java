@@ -23,7 +23,6 @@ public class User {
 	private String roles; // USER, ADMIN
 	
 	public List<String> getRoleList(){
-		System.out.println(this.roles.length());
 		if(this.roles.length() > 0) {
 			return Arrays.asList(this.roles.split(","));
 		}
