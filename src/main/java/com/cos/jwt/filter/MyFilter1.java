@@ -21,10 +21,21 @@ public class MyFilter1 implements Filter{
 		
 		// 토큰 : 코스
 		if(req.getMethod().equals("POST")) {
-			String headerAuth = req.getHeader("Authorization");
+			String headerAuth = req.getHeader("Authorization2");
 			System.out.println(headerAuth);
 
 			System.out.println("필터1");
+			if(headerAuth.equals("KANU")) {
+				chain.doFilter(req, res);
+			}else {
+				PrintWriter out = res.getWriter();
+				out.println("인증안됨");
+			}
+		}else {
+			String headerAuth = req.getHeader("Authorization2");
+			System.out.println(headerAuth);
+
+			System.out.println("필터1 GET");
 			if(headerAuth.equals("KANU")) {
 				chain.doFilter(req, res);
 			}else {
